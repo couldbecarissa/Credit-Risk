@@ -1,0 +1,12 @@
+pandas==2.3.1
+numpy==2.2.6
+scikit-learn==1.7.1
+scipy==1.16.1
+matplotlib==3.10.5
+fastapi==0.141.1
+uvicorn[standard]==0.52.0
+pydantic==2.11.7
+
+# Testing
+pytest==9.1.1
+httpx==0.28.1

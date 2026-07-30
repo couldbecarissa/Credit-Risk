@@ -1,0 +1,33 @@
+{
+  "n_records": 50000,
+  "default_rate": 0.19928,
+  "auc": 0.7374392238702826,
+  "ks": 0.35944508163986716,
+  "gini": 0.4748784477405652,
+  "accuracy": 0.6538,
+  "psi_train_vs_test": 0.0006463853276643669,
+  "expected_loss_rate": 0.3532328101481047,
+  "benford_summary": [
+    {
+      "feature": "loan_amnt",
+      "n": 50000,
+      "mad": 0.03315,
+      "conformity": "Nonconformity",
+      "chi2_p_value": 0.0
+    },
+    {
+      "feature": "annual_inc",
+      "n": 50000,
+      "mad": 0.053,
+      "conformity": "Nonconformity",
+      "chi2_p_value": 0.0
+    },
+    {
+      "feature": "revol_bal",
+      "n": 49845,
+      "mad": 0.01077,
+      "conformity": "Acceptable conformity",
+      "chi2_p_value": 0.0
+    }
+  ]
+}
