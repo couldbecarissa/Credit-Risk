@@ -4,7 +4,19 @@ Tracking doc for turning this folder from tutorial material into a
 deployable, testable, portfolio-ready project. Written for you to check
 against, not for the employer-facing README.
 
-## Status: done, verified end-to-end, not yet pushed to GitHub
+## Status: done, verified end-to-end, pushed to github.com/couldbecarissa/Credit-Risk
+
+## Post-push note: history had to be rewritten
+
+The original "first commit" (from before this session) had accidentally
+included the full 1.67GB raw CSV, which GitHub rejects outright (100MB
+limit). Since it was baked into the very first commit, `.gitignore`
+couldn't fix it retroactively. You confirmed throwing away that original
+commit rather than rewriting it in place, so the repo now starts from one
+fresh commit containing everything real (the guide, EDA notebook/report,
+the built pipeline, tests, Docker, this progress doc) minus that one file.
+Nothing was lost: the CSV was never meant to be in git, and its Kaggle
+source is documented in README.md instead.
 
 ## What existed before this session
 
@@ -82,16 +94,26 @@ If an interviewer asks about any of these, the honest answer is "here's
 what I found, here's why, and here's the documented next step", the same
 approach used throughout your other application answers this session.
 
-## What's still pending, needs you
+## Resolved during push
 
-- **GitHub repo doesn't exist yet.** `git remote -v` in this folder
-  points at `github.com/couldbecarissa/Credit-Risk`, but that repository
-  does not exist on your account. Before pushing, I need to create it
-  (via `gh repo create`) and confirm visibility, public or private, since
-  the whole point of this project is to be shareable with employers, I'd
-  default to public unless you say otherwise.
+- Created `github.com/couldbecarissa/Credit-Risk` as **public** (it
+  didn't exist before, despite the local remote already pointing at it).
+- The push initially failed twice: once because the remote had an
+  unrelated auto-generated README commit, then again because the original
+  first commit had the 1.67GB CSV baked in. You confirmed discarding that
+  original commit; the repo now has one clean initial commit. See the
+  "Post-push note" above.
+- Ran `pytest` again after the history rewrite to confirm nothing broke
+  (14/14 still passing), then pushed with `--force` since the rewritten
+  history was intentionally incompatible with the old, since-discarded
+  commit.
+
+## Still pending, needs you
+
+- **Docker still not verified** (see above), no Docker available in this
+  environment. Please run the build/run commands yourself.
 - `.claude/settings.local.json` has an uncommitted local permissions
-  change and is now gitignored, not pushed, that's a local tooling file,
-  not project content.
+  change and is gitignored, intentionally not pushed, that's a local
+  tooling file, not project content.
 - `pairs_halflife.py`/`.png` (the pairs-trading side script) is untouched
   and untracked, left alone since it's unrelated to this project.
